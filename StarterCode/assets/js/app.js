@@ -18,6 +18,7 @@
 // var svgWidth = window.innerWidth;
 // var svgHeight = window.innerHeight;
 
+
 //########################################################
 // Define SVG container
 //########################################################
@@ -49,6 +50,10 @@ var chartGroup = svg.append("g")
 // Initial Params.
 var chosenXAxis = "poverty";
 var chosenYAxis = "healthcare";
+
+//########################################################
+// Build all the functions
+//########################################################
 
 // Function used for updating x-scale variable upon click on axis label.
 function xScale(data, chosenXAxis) {
@@ -149,7 +154,7 @@ function updateToolTip(chosenXAxis, chosenYAxis, circlesGroup) {
     var toolTip = d3.tip()
         .attr("class", "tooltip")
         .style("background", "white")
-        // .offset([80, -60])
+        .offset([80, -60])
         .html(function(d) {
             return (`${d.state}<br>${xLabel}: ${yLabel}`);     
         });
